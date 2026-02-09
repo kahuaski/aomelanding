@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useTranslation } from "@/src/i18n";
+import About from "./about";
 
 const Home: React.FC = () => {
     const { t } = useTranslation();
@@ -14,7 +15,7 @@ const Home: React.FC = () => {
             >
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: "url('/aome.png')" }}
+                    style={{ backgroundImage: "url('/aomeElectric.jpeg')" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-slate-900/60 to-yellow-900/50" />
 
@@ -49,7 +50,7 @@ const Home: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Card 1 */}
                         <div className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                            <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">🚀</div>
+                            <img src="/instalacion.jpeg" alt="Instalación" className="mb-6 rounded-lg h-[300px] w-full object-cover" />
                             <h3 className="text-xl font-bold text-gray-900 mb-3">{t.services.webDev.title}</h3>
                             <p className="text-gray-500 leading-relaxed">
                                 {t.services.webDev.description}
@@ -57,7 +58,7 @@ const Home: React.FC = () => {
                         </div>
                         {/* Card 2 */}
                         <div className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                            <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">🎨</div>
+                            <img src="/reparacion.jpeg" alt="Reparación" className="mb-6 rounded-lg h-[300px] w-full object-cover" />
                             <h3 className="text-xl font-bold text-gray-900 mb-3">{t.services.design.title}</h3>
                             <p className="text-gray-500 leading-relaxed">
                                 {t.services.design.description}
@@ -65,7 +66,7 @@ const Home: React.FC = () => {
                         </div>
                         {/* Card 3 */}
                         <div className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                            <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">📱</div>
+                            <img src="/iluminacion.jpeg" alt="Iluminación" className="mb-6 rounded-lg h-[300px] w-full object-cover" />
                             <h3 className="text-xl font-bold text-gray-900 mb-3">{t.services.mobile.title}</h3>
                             <p className="text-gray-500 leading-relaxed">
                                 {t.services.mobile.description}
@@ -77,21 +78,7 @@ const Home: React.FC = () => {
 
             {/* Nosotros */}
             <section className="py-20 sm:py-28 bg-white" id="nosotros">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
-                    <div className="flex-1 text-center md:text-left">
-                        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6">
-                            {t.about.title}
-                        </h2>
-                        <p className="text-gray-500 text-lg leading-relaxed max-w-lg">
-                            {t.about.description}
-                        </p>
-                    </div>
-                    <div className="flex-1 flex items-center justify-center">
-                        <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-3xl bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center text-8xl shadow-inner">
-                            📸
-                        </div>
-                    </div>
-                </div>
+                    <About />
             </section>
 
             {/* Contacto */}

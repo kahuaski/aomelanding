@@ -23,27 +23,46 @@ const en = {
     subtitle:
       "Certified electrical installations, repairs, and maintenance for homes and businesses. Request your free estimate today.",
     webDev: {
-      title: "Web Development",
+      title: "Complete Electrical Installations",
       description:
-        "We build modern, fast, and optimized websites for any device.",
+        "Wiring from scratch for new construction or remodels, ensuring compliance with safety regulations.",
     },
     design: {
-      title: "UI/UX Design",
+      title: "Fault & Short Circuit Repair",
       description:
-        "We design intuitive and visually appealing user experiences.",
+        "Immediate detection and repair of power failures, burned outlets, or unexpected breaker trips.",
     },
     mobile: {
-      title: "Mobile Apps",
+      title: "LED & Decorative Lighting",
       description:
-        "We develop native and cross-platform mobile applications.",
+        "Design and installation of energy-efficient lighting systems for interiors, gardens, and commercial spaces.",
     },
   },
 
   // About
   about: {
+    sectionTitle: "About",
+    brand: "Aome Electric LLC",
     title: "About Us",
-    description:
-      "We are a team passionate about technology and innovation. We are dedicated to creating digital solutions that turn ideas into reality, helping businesses and entrepreneurs achieve their goals.",
+    subtitle: "Powering Your World with Excellence",
+    description1:
+      "At Aome Electric LLC, we are a team of licensed and experienced electricians committed to delivering top-quality electrical services for residential, commercial, and industrial clients. Our mission is to provide safe, reliable, and efficient electrical solutions tailored to meet the unique needs of every customer.",
+    description2:
+      "With years of expertise in the industry, we take pride in our craftsmanship, attention to detail, and dedication to customer satisfaction. From new installations and upgrades to repairs and maintenance, Aome Electric LLC is your trusted partner for all your electrical needs.",
+    values: {
+      licensed: "Licensed & Insured",
+      experts: "Expert Technicians",
+      availability: "24/7 Availability",
+      pricing: "Competitive Pricing",
+      residential: "Residential & Commercial",
+      satisfaction: "Customer Satisfaction",
+    },
+    stats: {
+      experience: "Years of Experience",
+      projects: "Projects Completed",
+      clients: "Happy Clients",
+      rate: "Satisfaction Rate",
+    },
   },
 
   // Contact
