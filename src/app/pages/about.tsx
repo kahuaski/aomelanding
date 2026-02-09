@@ -38,7 +38,7 @@ const About: React.FC = () => {
                     {/* Image / Icon */}
                     <div className="w-full lg:w-1/2 flex justify-center">
                         <div className="w-full max-w-lg h-[350px] bg-gray-900 rounded-2xl flex items-center justify-center shadow-xl">
-                            <span className="text-7xl">⚡</span>
+                              <img src="/about.jpeg" alt="About Us" className="rounded-2xl shadow-lg w-full h-auto object-cover" />
                         </div>
                     </div>
 

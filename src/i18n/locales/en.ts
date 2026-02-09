@@ -77,7 +77,12 @@ const en = {
 
   // Footer
   footer: {
+    description: "Experts in residential, commercial, and industrial electrical services. Your safety is our priority.",
+    quickLinks: "Quick Links",
+    contactInfo: "Contact Info",
+    followUs: "Follow Us",
     rights: "All rights reserved.",
+    developedBy: "Developed by",
   },
 };
 

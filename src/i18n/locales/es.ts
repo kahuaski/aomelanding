@@ -77,7 +77,12 @@ const es = {
 
   // Footer
   footer: {
+    description: "Expertos en servicios eléctricos residenciales, comerciales e industriales. Tu seguridad es nuestra prioridad.",
+    quickLinks: "Enlaces Rápidos",
+    contactInfo: "Información de Contacto",
+    followUs: "Síguenos",
     rights: "Todos los derechos reservados.",
+    developedBy: "Desarrollado por",
   },
 };
 
