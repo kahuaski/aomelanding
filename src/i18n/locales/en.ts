@@ -75,6 +75,18 @@ const en = {
     submit: "Send Message ✉️",
   },
 
+  // Gallery
+  gallery: {
+    title: "Our Work",
+    subtitle: "Take a look at some of our most recent projects.",
+    captions: {
+      img1: "Professional electrical installations",
+      img2: "Repair and maintenance",
+      img3: "LED and decorative lighting",
+      img4: "Aome Electric team",
+    },
+  },
+
   // Footer
   footer: {
     description: "Experts in residential, commercial, and industrial electrical services. Your safety is our priority.",

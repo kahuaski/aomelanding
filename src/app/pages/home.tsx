@@ -3,6 +3,7 @@
 import React from "react";
 import { useTranslation } from "@/src/i18n";
 import About from "./about";
+import Carousel from "@/src/common/Carousel";
 
 const Home: React.FC = () => {
     const { t } = useTranslation();
@@ -39,7 +40,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* Servicios */}
-            <section className="py-20 sm:py-28 bg-gray-50" id="servicios">
+            <section className="py-10 sm:py-14 bg-gray-50" id="servicios">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4">
                         {t.services.title}
@@ -76,10 +77,33 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
+            {/* Galería / Carrusel */}
+            <section className="py-10 sm:py-14 bg-gray-50" id="galeria">
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4">
+                        {t.gallery.title}
+                    </h2>
+                    <p className="text-center text-gray-500 mb-4 max-w-xl mx-auto">
+                        {t.gallery.subtitle}
+                    </p>
+                    <Carousel
+                        images={[
+                            { src: "/instalacion.jpeg", alt: "Instalación", caption: t.gallery.captions.img1 },
+                            { src: "/reparacion.jpeg", alt: "Reparación", caption: t.gallery.captions.img2 },
+                            { src: "/iluminacion.jpeg", alt: "Iluminación", caption: t.gallery.captions.img3 },
+                            { src: "/aomeElectric.jpeg", alt: "Aome Electric", caption: t.gallery.captions.img4 },
+                        ]}
+                        autoPlay={true}
+                        interval={5000}
+                        height="h-[450px] sm:h-[500px]"
+                    />
+                </div>
+            </section>
             {/* Nosotros */}
             <section className="py-20 sm:py-28 bg-white" id="nosotros">
                     <About />
             </section>
+
 
             {/* Contacto */}
             <section className="py-20 sm:py-28 bg-gray-50" id="contacto">
