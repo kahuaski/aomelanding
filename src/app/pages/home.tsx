@@ -99,55 +99,8 @@ const Home: React.FC = () => {
                     />
                 </div>
             </section>
-            {/* Nosotros */}
-            <section className="py-20 sm:py-28 bg-white" id="nosotros">
-                    <About />
-            </section>
+          
 
-
-            {/* Contacto */}
-            <section className="py-20 sm:py-28 bg-gray-50" id="contacto">
-                <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4">
-                        {t.contact.title}
-                    </h2>
-                    <p className="text-center text-gray-500 mb-12">
-                        {t.contact.subtitle}
-                    </p>
-                    <form className="space-y-6">
-                        <div>
-                            <input
-                                type="text"
-                                placeholder={t.contact.namePlaceholder}
-                                required
-                                className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow shadow-sm hover:shadow-md"
-                            />
-                        </div>
-                        <div>
-                            <input
-                                type="email"
-                                placeholder={t.contact.emailPlaceholder}
-                                required
-                                className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow shadow-sm hover:shadow-md"
-                            />
-                        </div>
-                        <div>
-                            <textarea
-                                placeholder={t.contact.messagePlaceholder}
-                                rows={5}
-                                required
-                                className="w-full px-5 py-4 rounded-xl border border-gray-200 bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-shadow shadow-sm hover:shadow-md resize-none"
-                            />
-                        </div>
-                        <button
-                            type="submit"
-                            className="w-full py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 text-lg"
-                        >
-                            {t.contact.submit}
-                        </button>
-                    </form>
-                </div>
-            </section>
         </div>
     );
 };

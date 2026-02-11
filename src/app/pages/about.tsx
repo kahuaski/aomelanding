@@ -28,16 +28,16 @@ const About: React.FC = () => {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
-                        {t.about.sectionTitle} <span className="text-amber-500">{t.about.brand}</span>
+                        {t.about.sectionTitle} <span className="text-blue-500">{t.about.brand}</span>
                     </h2>
-                    <div className="w-20 h-1 bg-amber-500 mx-auto rounded-full" />
+                    <div className="w-20 h-1 bg-blue-600 mx-auto rounded-full" />
                 </div>
 
                 {/* Content */}
                 <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
                     {/* Image / Icon */}
                     <div className="w-full lg:w-1/2 flex justify-center">
-                        <div className="w-full max-w-lg h-[350px] bg-gray-900 rounded-2xl flex items-center justify-center shadow-xl">
+                        <div className="w-full max-w-lg h-[350px] bg-blue-600 rounded-2xl flex items-center justify-center shadow-xl">
                               <img src="/about.jpeg" alt="About Us" className="rounded-2xl shadow-lg w-full h-auto object-cover" />
                         </div>
                     </div>
@@ -54,12 +54,19 @@ const About: React.FC = () => {
                             {t.about.description2}
                         </p>
 
-                        {/* Values */}
-                        <div className="flex flex-wrap gap-4">
+                        {/* Values (photon-style icons with label below) */}
+                        <div className="flex flex-wrap gap-6">
                             {values.map((item, index) => (
-                                <div key={index} className="flex items-center gap-2.5 bg-gray-50 px-4 py-2 rounded-lg border border-gray-100">
-                                    <span className="text-xl">{item.icon}</span>
-                                    <span className="font-semibold text-gray-900 text-sm">{item.label}</span>
+                                <div key={index} className="flex flex-col items-center w-28">
+                                    <div className="relative flex items-center justify-center w-20 h-20 rounded-full">
+                                        {/* soft glow */}
+                                        <span className="absolute inline-block w-20 h-20 rounded-full bg-blue-400 opacity-20 blur-xl animate-pulse"></span>
+                                        {/* subtle ring */}
+                                        <span className="absolute inline-block w-24 h-24 rounded-full border border-blue-300 opacity-40"></span>
+                                        {/* icon */}
+                                        <span className="relative text-2xl drop-shadow-md">{item.icon}</span>
+                                    </div>
+                                    <span className="mt-3 text-center text-sm font-semibold text-gray-900">{item.label}</span>
                                 </div>
                             ))}
                         </div>
@@ -67,13 +74,13 @@ const About: React.FC = () => {
                 </div>
 
                 {/* Stats */}
-                <div className="flex flex-wrap justify-center gap-10 mt-20 p-10 bg-gray-900 rounded-2xl shadow-xl">
+                <div className="flex flex-wrap justify-center gap-10 mt-20 p-10 bg-blue-600 rounded-2xl shadow-xl">
                     {stats.map((stat, index) => (
                         <div key={index} className="text-center min-w-[150px]">
-                            <h3 className="text-4xl sm:text-5xl font-bold text-amber-500 mb-2">
+                            <h3 className="text-4xl sm:text-5xl font-bold text-white mb-2">
                                 {stat.number}
                             </h3>
-                            <p className="text-gray-400 text-base">{stat.label}</p>
+                            <p className="text-white text-base">{stat.label}</p>
                         </div>
                     ))}
                 </div>

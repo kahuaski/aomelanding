@@ -73,6 +73,27 @@ const es = {
     emailPlaceholder: "Tu correo electrónico",
     messagePlaceholder: "Tu mensaje",
     submit: "Enviar Mensaje ✉️",
+    info: {
+      heading: "Ponte en Contacto",
+      paragraph:
+        "Si necesitas servicios eléctricos residenciales o comerciales, Aome Electric LLC está listo para ayudarte. ¡Contáctanos hoy para un presupuesto gratuito!",
+      phoneLabel: "Teléfono",
+      emailLabel: "Correo",
+      addressLabel: "Dirección",
+      hoursLabel: "Horario",
+      open24: "Abierto 24/7",
+    },
+    badges: {
+      residential: "Residencial",
+      commercial: "Comercial",
+      freeEstimate: "Presupuesto Gratis",
+      licensed: "Licenciados y Asegurados",
+    },
+    cta: {
+      title: "¿Necesitas Servicio Eléctrico de Emergencia?",
+      text: "Estamos disponibles 24/7. Licenciados, asegurados y listos para ayudar.",
+      callNow: "Llama ahora: (404) 488-0557",
+    },
   },
 
   // Gallery
