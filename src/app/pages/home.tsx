@@ -1,9 +1,14 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { useTranslation } from "@/src/i18n";
 import About from "./about";
 import Carousel from "@/src/common/Carousel";
+import dynamic from "next/dynamic";
+
+const CommentForm = dynamic(() => import("@/src/components/CommentForm"), { ssr: false, loading: () => <div className="p-4">Cargando formulario...</div> });
+const CommentsList = dynamic(() => import("@/src/components/CommentsList"), { ssr: false, loading: () => <div className="p-4">Cargando comentarios...</div> });
 
 const Home: React.FC = () => {
     const { t } = useTranslation();
@@ -51,7 +56,9 @@ const Home: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Card 1 */}
                         <div className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                            <img src="/instalacion.jpeg" alt="Instalación" className="mb-6 rounded-lg h-[300px] w-full object-cover" />
+                            <div className="mb-6 rounded-lg overflow-hidden">
+                                <Image src="/aome/aome-3.jpeg" alt="Instalación" width={1200} height={800} className="h-[300px] w-full object-cover" sizes="(max-width: 768px) 100vw, 380px" />
+                            </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-3">{t.services.webDev.title}</h3>
                             <p className="text-gray-500 leading-relaxed">
                                 {t.services.webDev.description}
@@ -59,7 +66,9 @@ const Home: React.FC = () => {
                         </div>
                         {/* Card 2 */}
                         <div className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                            <img src="/reparacion.jpeg" alt="Reparación" className="mb-6 rounded-lg h-[300px] w-full object-cover" />
+                            <div className="mb-6 rounded-lg overflow-hidden">
+                                <Image src="/aome/aome-18.jpeg" alt="Reparación" width={1200} height={800} className="h-[300px] w-full object-cover" sizes="(max-width: 768px) 100vw, 380px" />
+                            </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-3">{t.services.design.title}</h3>
                             <p className="text-gray-500 leading-relaxed">
                                 {t.services.design.description}
@@ -67,7 +76,9 @@ const Home: React.FC = () => {
                         </div>
                         {/* Card 3 */}
                         <div className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
-                            <img src="/iluminacion.jpeg" alt="Iluminación" className="mb-6 rounded-lg h-[300px] w-full object-cover" />
+                            <div className="mb-6 rounded-lg overflow-hidden">
+                                <Image src="/aome/aome-23.jpeg" alt="Iluminación" width={1200} height={800} className="h-[300px] w-full object-cover" sizes="(max-width: 768px) 100vw, 380px" />
+                            </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-3">{t.services.mobile.title}</h3>
                             <p className="text-gray-500 leading-relaxed">
                                 {t.services.mobile.description}
@@ -88,10 +99,10 @@ const Home: React.FC = () => {
                     </p>
                     <Carousel
                         images={[
-                            { src: "/instalacion.jpeg", alt: "Instalación", caption: t.gallery.captions.img1 },
-                            { src: "/reparacion.jpeg", alt: "Reparación", caption: t.gallery.captions.img2 },
-                            { src: "/iluminacion.jpeg", alt: "Iluminación", caption: t.gallery.captions.img3 },
-                            { src: "/aomeElectric.jpeg", alt: "Aome Electric", caption: t.gallery.captions.img4 },
+                            { src: "/aome/aome-11.jpeg", alt: "Instalación", caption: t.gallery.captions.img1 },
+                            { src: "/aome/aome-22.jpeg", alt: "Reparación", caption: t.gallery.captions.img2 },
+                            { src: "/aome/aome-3.jpeg", alt: "Iluminación", caption: t.gallery.captions.img3 },
+                            { src: "/aome/aome-4.jpeg", alt: "Aome Electric", caption: t.gallery.captions.img4 },
                         ]}
                         autoPlay={true}
                         interval={5000}
@@ -100,7 +111,18 @@ const Home: React.FC = () => {
                 </div>
             </section>
           
-
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl mx-auto px-4 py-8">
+    <div className="col-span-full text-center mb-2">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">{t.comments.title}</h2>
+        <p className="mt-2 text-gray-500 max-w-3xl mx-auto">{t.comments.description}</p>
+    </div>
+    <div className="p-4">
+        <CommentForm />
+    </div>
+    <div className="p-4">
+        <CommentsList />
+    </div>
+</div>
         </div>
     );
 };

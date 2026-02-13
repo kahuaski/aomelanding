@@ -8,6 +8,28 @@ const en = {
     register: "Sign Up",
   },
 
+  // Comments / Feedback
+  comments: {
+    loading: "Loading comments...",
+    none: "No comments yet.",
+    anonymous: "Anonymous",
+    title: "Share your experience",
+    description: "Did you enjoy our service? Leave a comment — in Spanish or English — to help us improve and assist other customers. Your feedback matters.",
+    nameLabel: "Name",
+    namePlaceholder: "Your name",
+    emailLabel: "Email (optional)",
+    emailPlaceholder: "you@domain.com",
+    commentLabel: "Comment",
+    commentPlaceholder: "Write your comment about the page or services",
+    submit: "Send comment",
+    sending: "Sending...",
+    validation_no_comment: "Please write a comment.",
+    thank_you: "Thanks for your comment.",
+    send_error: "Error sending the comment. Try again later.",
+    phoneLabel: "Phone",
+    starLabel: "stars",
+  },
+
   // Hero
   hero: {
     welcome: "Welcome",
@@ -37,6 +59,38 @@ const en = {
       description:
         "Design and installation of energy-efficient lighting systems for interiors, gardens, and commercial spaces.",
     },
+    pageTitle: "Our Services",
+    pageSubtitle: "Professional, reliable electrical solutions",
+    headline: "Electrical services that power your life",
+    lead: "Installations, repairs and maintenance backed by quality and safety. Contact us for fast, reliable service tailored to your home or business.",
+    closeBtn: "Close",
+    moreInfo: "More information about the service can go here.",
+    items: [
+      {
+        title: "Complete Electrical Installations",
+        description: "Comprehensive electrical installation projects for residential and commercial",
+      },
+      {
+        title: "Electrical Repairs",
+        description: "Diagnosis and repair of electrical issues",
+      },
+      {
+        title: "Upgrading Installations",
+        description: "Modernization of old electrical systems",
+      },
+      {
+        title: "Professional Lighting",
+        description: "Design and installation of LED lighting systems",
+      },
+      {
+        title: "Professional Lighting",
+        description: "Design and installation of LED lighting systems",
+      },
+      {
+        title: "Professional Lighting",
+        description: "Design and installation of LED lighting systems",
+      },
+    ],
   },
 
   // About
@@ -94,6 +148,7 @@ const en = {
       text: "We're available 24/7. Licensed, insured, and ready to help.",
       callNow: "Call Now: (404) 488-0557",
     },
+    whatsappTooltip: "Message us!",
   },
 
   // Gallery

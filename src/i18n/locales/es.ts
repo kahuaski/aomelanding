@@ -8,6 +8,28 @@ const es = {
     register: "Regístrate",
   },
 
+  // Comments / Feedback
+  comments: {
+    loading: "Cargando comentarios...",
+    none: "No hay comentarios aún.",
+    anonymous: "Anónimo",
+    title: "Cuéntanos tu experiencia",
+    description: "¿Te gustó nuestro servicio? Déjanos un comentario — en español o en inglés — para ayudarnos a mejorar y orientar a otros clientes. Tu opinión cuenta.",
+    nameLabel: "Nombre",
+    namePlaceholder: "Tu nombre",
+    emailLabel: "Correo (opcional)",
+    emailPlaceholder: "tu@correo.com",
+    commentLabel: "Comentario",
+    commentPlaceholder: "Escribe tu comentario sobre la página o los servicios",
+    submit: "Enviar comentario",
+    sending: "Enviando...",
+    validation_no_comment: "Por favor escribe un comentario.",
+    thank_you: "Gracias por tu comentario.",
+    send_error: "Error al enviar el comentario. Intenta de nuevo más tarde.",
+    phoneLabel: "Teléfono",
+    starLabel: "estrellas",
+  },
+
   // Hero
   hero: {
     welcome: "Bienvenido",
@@ -37,6 +59,38 @@ const es = {
       description:
         "Diseño e instalación de sistemas de iluminación de bajo consumo para interiores, jardines y locales comerciales.",
     },
+    pageTitle: "Nuestros Servicios",
+    pageSubtitle: "Soluciones eléctricas profesionales y de confianza",
+    headline: "Servicios eléctricos que iluminan tu vida",
+    lead: "Instalaciones, reparaciones y mantenimiento con garantía de calidad. Contáctanos para un servicio rápido, seguro y a la medida de tu hogar o negocio.",
+    closeBtn: "Cerrar",
+    moreInfo: "Más información sobre el servicio puede ir aquí.",
+    items: [
+      {
+        title: "Instalaciones Eléctricas Completas",
+        description: "Proyectos de instalación eléctrica integral para residencial y comercial",
+      },
+      {
+        title: "Reparaciones Eléctricas",
+        description: "Diagnóstico y reparación de problemas eléctricos",
+      },
+      {
+        title: "Actualización de Instalaciones",
+        description: "Modernización de sistemas eléctricos antiguos",
+      },
+      {
+        title: "Iluminación Profesional",
+        description: "Diseño e instalación de sistemas de iluminación LED",
+      },
+      {
+        title: "Iluminación Profesional",
+        description: "Diseño e instalación de sistemas de iluminación LED",
+      },
+      {
+        title: "Iluminación Profesional",
+        description: "Diseño e instalación de sistemas de iluminación LED",
+      },
+    ],
   },
 
   // About
@@ -94,6 +148,7 @@ const es = {
       text: "Estamos disponibles 24/7. Licenciados, asegurados y listos para ayudar.",
       callNow: "Llama ahora: (404) 488-0557",
     },
+    whatsappTooltip: "¡Escríbenos!",
   },
 
   // Gallery

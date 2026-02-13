@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 
 interface CarouselImage {
     src: string;
@@ -53,16 +54,12 @@ const Carousel: React.FC<CarouselProps> = ({
                 <div
                     key={index}
                     className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                        index === current
-                            ? "opacity-100 scale-100"
-                            : "opacity-0 scale-105"
+                        index === current ? "opacity-100 scale-100" : "opacity-0 scale-105"
                     }`}
                 >
-                    <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-full object-cover"
-                    />
+                    <div className="relative w-full h-full">
+                        <Image src={image.src} alt={image.alt} fill className="w-full h-full object-cover" sizes="100vw" />
+                    </div>
                     {/* Gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 

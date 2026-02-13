@@ -17,8 +17,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aome - Soluciones Digitales",
+  title: "Aome - Electrical Services in Atlanta",
   description: "Soluciones digitales innovadoras para impulsar tu negocio",
+  icons: {
+    icon: '/aome111.ico',
+    shortcut: '/aome111.ico',
+    apple: '/aome111.ico',
+  },
 };
 
 export default function RootLayout({

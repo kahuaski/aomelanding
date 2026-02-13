@@ -1,6 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { HiMenu, HiX } from "react-icons/hi";
 import { useTranslation } from "@/src/i18n";
 
 const NavBar: React.FC = () => {
@@ -12,10 +15,10 @@ const NavBar: React.FC = () => {
     };
 
     const navLinks = [
-        { name: t.nav.home, href: "#inicio" },
-        { name: t.nav.about, href: "#conocenos" },
-        { name: t.nav.services, href: "#servicios" },
-        { name: t.nav.contact, href: "#contacto" },
+        { name: t.nav.home, href: "/" },
+        { name: t.nav.about, href: "/about" },
+        { name: t.nav.services, href: "/services" },
+        { name: t.nav.contact, href: "/contact" },
     ];
 
     return (
@@ -23,22 +26,23 @@ const NavBar: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
-                    <div className="flex-shrink-0">
-                        <a href="#inicio" className="text-2xl font-bold text-blue-600">
+                    <div className="flex-shrink-0 flex flex-row items-center gap-3">
+                        <Image src="/aome111.png" alt="Aome Electric LLC Logo" width={40} height={40} className="rounded" priority={false} />
+                        <Link href="/" className="text-2xl font-bold text-blue-600">
                             AomeElectricllc
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-8">
                         {navLinks.map((link) => (
-                            <a
+                            <Link
                                 key={link.href}
                                 href={link.href}
                                 className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
                             >
                                 {link.name}
-                            </a>
+                            </Link>
                         ))}
                         <a
                             href="#registrate"
@@ -72,28 +76,7 @@ const NavBar: React.FC = () => {
                             className="text-gray-700 hover:text-blue-600 focus:outline-none"
                             aria-label="Toggle menu"
                         >
-                            <svg
-                                className="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                {isOpen ? (
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
-                                ) : (
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M4 6h16M4 12h16M4 18h16"
-                                    />
-                                )}
-                            </svg>
+                            {isOpen ? <HiX className="h-6 w-6" /> : <HiMenu className="h-6 w-6" />}
                         </button>
                     </div>
                 </div>
@@ -103,15 +86,15 @@ const NavBar: React.FC = () => {
                     <div className="md:hidden pb-4">
                         <div className="flex flex-col space-y-3">
                             {navLinks.map((link) => (
-                                <a
-                                    key={link.href}
-                                    href={link.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium px-2 py-1"
-                                >
-                                    {link.name}
-                                </a>
-                            ))}
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium px-2 py-1"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                ))}
                             <a
                                 href="#registrate"
                                 onClick={() => setIsOpen(false)}

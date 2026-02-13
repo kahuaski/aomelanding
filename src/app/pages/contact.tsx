@@ -168,7 +168,7 @@ const Contact: React.FC = () => {
 
                         {/* Badges */}
                         <div className="grid grid-cols-2 gap-4 pt-4">
-                            <div className="bg-gradient-to-br from-blue-600/20 to-blue-600/10 border border-turquoise-500/30 rounded-xl p-5 text-center shadow-md">
+                            <div className="bg-gradient-to-br from-blue-600/30 to-blue-600/10 border-1 border-blue-500/30 rounded-xl p-5 text-center shadow-md">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="h-10 w-10 mx-auto mb-2 text-yellow-400"
@@ -184,12 +184,12 @@ const Contact: React.FC = () => {
                                     />
                                 </svg>
                                 <p className="font-bold text-white">{t.contact.badges.residential}</p>
-                                <p className="text-sm text-gray-100">Services</p>
+                                <p className="text-sm text-gray-900">Services</p>
                             </div>
-                            <div className="bg-gradient-to-br from-blue-600/20 to-blue-600/10 border border-turquoise-500/30 rounded-xl p-5 text-center shadow-md">
+                            <div className="bg-gradient-to-br from-blue-600/30 to-blue-600/10 border-1 border-blue-500/30 rounded-xl p-5 text-center shadow-md">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="h-10 w-10 mx-auto mb-2 text-white"
+                                    className="h-10 w-10 mx-auto mb-2 text-red-400"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -202,7 +202,7 @@ const Contact: React.FC = () => {
                                     />
                                 </svg>
                                 <p className="font-bold text-white">{t.contact.badges.commercial}</p>
-                                <p className="text-sm text-gray-100">Services</p>
+                                <p className="text-sm text-gray-900">Services</p>
                             </div>
                             <div className="bg-gradient-to-br from-green-500/20 to-green-600/10 border border-green-500/30 rounded-xl p-5 text-center">
                                 <svg
@@ -220,12 +220,12 @@ const Contact: React.FC = () => {
                                     />
                                 </svg>
                                 <p className="font-bold text-white">{t.contact.badges.freeEstimate}</p>
-                                <p className="text-sm text-gray-100">No obligation</p>
+                                <p className="text-sm text-gray-900">No obligation</p>
                             </div>
                             <div className="bg-gradient-to-br from-blue-600/20 to-blue-600/10 border border-blue-600/30 rounded-xl p-5 text-center">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="h-10 w-10 mx-auto mb-2 text-white"
+                                    className="h-10 w-10 mx-auto mb-2 text-blue-400"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -238,7 +238,7 @@ const Contact: React.FC = () => {
                                     />
                                 </svg>
                                 <p className="font-bold text-white">{t.contact.badges.licensed}</p>
-                                <p className="text-sm text-gray-100">Fully certified</p>
+                                <p className="text-sm text-gray-900">Fully certified</p>
                             </div>
                         </div>
                     </div>
