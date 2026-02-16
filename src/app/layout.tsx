@@ -18,7 +18,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Aome - Electrical Services in Atlanta",
-  description: "Soluciones digitales innovadoras para impulsar tu negocio",
+  description: "Professional, reliable residential & commercial electrical services in Atlanta. Installations, repairs and fast, safe service. Contact us today.",
+  alternates: {
+    canonical: '/',
+    languages: {
+      es: '/?lang=es'
+    }
+  },
   icons: {
     icon: '/aome111.ico',
     shortcut: '/aome111.ico',
@@ -32,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
