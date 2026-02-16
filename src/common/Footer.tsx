@@ -72,15 +72,15 @@ const Footer: React.FC = () => {
                         <h4 className="text-white font-semibold text-lg mb-4">{t.footer.followUs}</h4>
                         <div className="flex flex-wrap gap-3">
                             {/* Facebook */}
-                            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on Facebook" className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-sm hover:shadow-md">
+                            <a href="https://facebook.com/Chrisstdj91" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on Facebook" className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-sm hover:shadow-md">
                                 <FaFacebookF className="w-5 h-5 text-white" />
                             </a>
                             {/* Instagram */}
-                            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on Instagram" className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-sm hover:shadow-md">
+                            <a href="https://www.instagram.com/aome_electric_llc?igsh=aXMwNDlrbXFzZ3Fs  " target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on Instagram" className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-sm hover:shadow-md">
                                 <FaInstagram className="w-5 h-5 text-white" />
                             </a>
                             {/* TikTok */}
-                            <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on TikTok" className="w-10 h-10 bg-gray-800 hover:bg-black rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-sm hover:shadow-md border border-transparent hover:border-white">
+                            <a href="https://www.tiktok.com/@chrisstdj?_r=1&_t=ZP-93msowKdu87" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on TikTok" className="w-10 h-10 bg-gray-800 hover:bg-black rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-sm hover:shadow-md border border-transparent hover:border-white">
                                 <FaTiktok className="w-5 h-5 text-white" />
                             </a>
                             {/* YouTube */}
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
                         &copy; {new Date().getFullYear()} <span className="text-white font-semibold">Aome Electric LLC</span>. {t.footer.rights}
                     </p>
                     <p className="text-sm text-gray-100">
-                        {t.footer.developedBy} <a href="https://github.com/kahuaski" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 font-semibold transition-colors">kahuaski</a>
+                        {t.footer.developedBy} <a href="https://github.com/kahuaski" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-amber-300 rounded">kahuaski</a>
                     </p>
                 </div>
             </div>

@@ -78,10 +78,12 @@ export default function Services() {
                                         className={`${service.span} group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer`}
                                 >
                                         <Image
-                                                src={service.image}
-                                    alt={service.title}
-                                                fill
-                                                className={`object-cover ${isActive ? 'scale-105' : 'group-hover:scale-105'} transition-transform duration-300`}
+                                            src={service.image}
+                                        alt={service.title}
+                                            fill
+                                            priority={service.id === '1'}
+                                            fetchPriority={service.id === '1' ? 'high' : 'auto'}
+                                            className={`object-cover ${isActive ? 'scale-105' : 'group-hover:scale-105'} transition-transform duration-300`}
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
 

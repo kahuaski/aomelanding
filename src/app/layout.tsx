@@ -25,7 +25,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.aomeelectricllc.com/',
     languages: {
-      es: '/?lang=es'
+      en: 'https://www.aomeelectricllc.com/',
+      es: 'https://www.aomeelectricllc.com/?lang=es',
     }
   },
   icons: {

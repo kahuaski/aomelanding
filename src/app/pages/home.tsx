@@ -18,9 +18,14 @@ const Home: React.FC = () => {
                 className="relative min-h-screen flex items-center justify-center overflow-hidden"
                 id="inicio"
             >
-                <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: "url('/aomeElectric.jpeg')" }}
+                <Image
+                    src="/aomeElectric.jpeg"
+                    alt="Aome Electric background"
+                    priority
+                    fetchPriority="high"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    width={1920}
+                    height={1080}
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-slate-900/60 to-yellow-900/50" />
 

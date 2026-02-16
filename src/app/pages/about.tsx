@@ -74,6 +74,8 @@ const About: React.FC = () => {
                                                 alt={`Gallery ${i + 1}`}
                                                 width={1200}
                                                 height={800}
+                                                priority={i < 2}
+                                                fetchPriority={i < 2 ? "high" : "auto"}
                                                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300"
                                                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
                                             />
@@ -100,13 +102,13 @@ const About: React.FC = () => {
                         <div className="mb-6">
                             <h4 className="text-lg font-semibold text-gray-900 mb-3">{t.footer?.followUs ?? 'Follow us'}</h4>
                             <div className="flex items-center gap-3">
-                                <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on Facebook" className="w-9 h-9 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-transform transform hover:scale-105 shadow-sm">
+                                <a href="https://facebook.com/Chrisstdj91" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on Facebook" className="w-9 h-9 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-transform transform hover:scale-105 shadow-sm">
                                     <FaFacebookF className="w-4 h-4 text-white" />
                                 </a>
-                                <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on Instagram" className="w-9 h-9 bg-gradient-to-br from-purple-600 to-pink-500 rounded-full flex items-center justify-center transition-transform transform hover:scale-105 shadow-sm">
+                                <a href="https://www.instagram.com/aome_electric_llc?igsh=aXMwNDlrbXFzZ3Fs  " target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on Instagram" className="w-9 h-9 bg-gradient-to-br from-purple-600 to-pink-500 rounded-full flex items-center justify-center transition-transform transform hover:scale-105 shadow-sm">
                                     <FaInstagram className="w-4 h-4 text-white" />
                                 </a>
-                                <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on TikTok" className="w-9 h-9 bg-black rounded-full flex items-center justify-center transition-transform transform hover:scale-105 shadow-sm">
+                                <a href="https://www.tiktok.com/@chrisstdj?_r=1&_t=ZP-93msowKdu87" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on TikTok" className="w-9 h-9 bg-black rounded-full flex items-center justify-center transition-transform transform hover:scale-105 shadow-sm">
                                     <FaTiktok className="w-4 h-4 text-white" />
                                 </a>
                                 <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on YouTube" className="w-9 h-9 bg-red-600 rounded-full flex items-center justify-center transition-transform transform hover:scale-105 shadow-sm">
