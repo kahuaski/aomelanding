@@ -17,10 +17,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aome - Electrical Services in Atlanta",
+  title: {
+    default: "Aome - Electrical Services in Atlanta",
+    template: "%s | Aome Electric LLC",
+  },
   description: "Professional, reliable residential & commercial electrical services in Atlanta. Installations, repairs and fast, safe service. Contact us today.",
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.aomeelectricllc.com/',
     languages: {
       es: '/?lang=es'
     }
@@ -29,6 +32,30 @@ export const metadata: Metadata = {
     icon: '/aome111.ico',
     shortcut: '/aome111.ico',
     apple: '/aome111.ico',
+  },
+  openGraph: {
+    title: 'AomeElectricllc - Electrical Services in Atlanta',
+    description:
+      'Professional, reliable residential & commercial electrical services in Atlanta. Installations, repairs and fast, safe service. Contact us today.',
+    url: 'https://www.aomeelectricllc.com/',
+    siteName: 'AomeElectricllc',
+    images: [
+      {
+        url: 'https://www.aomeelectricllc.com/aome/aome-11.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'AomeElectricllc - Electrical services',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AomeElectricllc - Electrical Services in Atlanta',
+    description:
+      'Professional, reliable residential & commercial electrical services in Atlanta. Installations, repairs and fast, safe service. Contact us today.',
+    images: ['https://www.aomeelectricllc.com/aome/aome-11.jpeg'],
   },
 };
 
@@ -43,6 +70,44 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
+          {/* Structured data (JSON-LD) to help search engines understand the business */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'LocalBusiness',
+                name: 'Aome Electric LLC',
+                url: 'https://www.aomeelectricllc.com/',
+                telephone: '+1 (404) 488-0557',
+                image: 'https://www.aomeelectricllc.com/aome/aome-11.jpeg',
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress: '6319 Delnorte court',
+                  addressLocality: 'Norcross',
+                  addressRegion: 'GA',
+                  postalCode: '30093',
+                  addressCountry: 'US',
+                },
+                sameAs: [
+                  'https://www.facebook.com/',
+                  'https://www.instagram.com/',
+                  'https://www.tiktok.com/',
+                  'https://www.youtube.com/',
+                ],
+                priceRange: '$$',
+                contactPoint: [
+                  {
+                    '@type': 'ContactPoint',
+                    telephone: '+1 (404) 488-0557',
+                    contactType: 'customer service',
+                    areaServed: 'US',
+                    availableLanguage: ['English', 'Spanish'],
+                  },
+                ],
+              }),
+            }}
+          />
           <NavBar />
           <main className="pt-16">
             {children}
