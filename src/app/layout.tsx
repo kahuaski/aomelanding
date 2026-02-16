@@ -57,6 +57,16 @@ export const metadata: Metadata = {
       'Professional, reliable residential & commercial electrical services in Atlanta. Installations, repairs and fast, safe service. Contact us today.',
     images: ['https://www.aomeelectricllc.com/aome/aome-11.jpeg'],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+    },
+  },
+  keywords: ['electrician', 'electrical services', 'residential electrician', 'commercial electrician', 'Atlanta electrician'],
 };
 
 export default function RootLayout({
@@ -76,35 +86,61 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
                 '@context': 'https://schema.org',
-                '@type': 'LocalBusiness',
-                name: 'Aome Electric LLC',
-                url: 'https://www.aomeelectricllc.com/',
-                telephone: '+1 (404) 488-0557',
-                image: 'https://www.aomeelectricllc.com/aome/aome-11.jpeg',
-                address: {
-                  '@type': 'PostalAddress',
-                  streetAddress: '6319 Delnorte court',
-                  addressLocality: 'Norcross',
-                  addressRegion: 'GA',
-                  postalCode: '30093',
-                  addressCountry: 'US',
-                },
-                sameAs: [
-                  'https://www.facebook.com/',
-                  'https://www.instagram.com/',
-                  'https://www.tiktok.com/',
-                  'https://www.youtube.com/',
-                ],
-                priceRange: '$$',
-                contactPoint: [
+                '@graph': [
                   {
-                    '@type': 'ContactPoint',
+                    '@type': 'LocalBusiness',
+                    '@id': 'https://www.aomeelectricllc.com/#business',
+                    name: 'Aome Electric LLC',
+                    url: 'https://www.aomeelectricllc.com/',
                     telephone: '+1 (404) 488-0557',
-                    contactType: 'customer service',
-                    areaServed: 'US',
-                    availableLanguage: ['English', 'Spanish'],
+                    image: 'https://www.aomeelectricllc.com/aome/aome-11.jpeg',
+                    address: {
+                      '@type': 'PostalAddress',
+                      streetAddress: '6319 Delnorte court',
+                      addressLocality: 'Norcross',
+                      addressRegion: 'GA',
+                      postalCode: '30093',
+                      addressCountry: 'US',
+                    },
+                    sameAs: [
+                      'https://www.facebook.com/',
+                      'https://www.instagram.com/',
+                      'https://www.tiktok.com/',
+                      'https://www.youtube.com/',
+                    ],
+                    priceRange: '$$',
+                    contactPoint: [
+                      {
+                        '@type': 'ContactPoint',
+                        telephone: '+1 (404) 488-0557',
+                        contactType: 'customer service',
+                        areaServed: 'US',
+                        availableLanguage: ['English', 'Spanish'],
+                      },
+                    ],
                   },
-                ],
+                  {
+                    '@type': 'Service',
+                    '@id': 'https://www.aomeelectricllc.com/#electrical-service',
+                    name: 'Electrical Services',
+                    serviceType: ['Residential electrical services', 'Commercial electrical services', 'Installations', 'Repairs'],
+                    provider: {
+                      '@id': 'https://www.aomeelectricllc.com/#business',
+                    },
+                    areaServed: 'US',
+                  },
+                  {
+                    '@type': 'BreadcrumbList',
+                    'itemListElement': [
+                      {
+                        '@type': 'ListItem',
+                        'position': 1,
+                        'name': 'Home',
+                        'item': 'https://www.aomeelectricllc.com/'
+                      }
+                    ]
+                  }
+                ]
               }),
             }}
           />
