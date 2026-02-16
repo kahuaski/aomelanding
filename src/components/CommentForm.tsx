@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { useTranslation } from "@/src/i18n";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 const IconStarFilled = ({ className = "w-9 h-9" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden>
