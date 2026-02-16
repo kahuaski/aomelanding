@@ -11,7 +11,6 @@ interface Service {
     image: string;
     span?: string;
 }
-
 const services: Service[] = [
     {
         id: '1',
