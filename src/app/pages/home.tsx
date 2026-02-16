@@ -102,10 +102,10 @@ const Home: React.FC = () => {
                     </p>
                     <Carousel
                         images={[
-                            { src: "/aome/aome-11.jpeg", alt: "Instalación", caption: t.gallery.captions.img1 },
-                            { src: "/aome/aome-22.jpeg", alt: "Reparación", caption: t.gallery.captions.img2 },
-                            { src: "/aome/aome-3.jpeg", alt: "Iluminación", caption: t.gallery.captions.img3 },
-                            { src: "/aome/aome-4.jpeg", alt: "Aome Electric", caption: t.gallery.captions.img4 },
+                            { src: "/aome/aome-25.jpeg", alt: "Instalación", caption: t.gallery.captions.img1.title },
+                            { src: "/aome/aome-15.jpeg", alt: "Reparación", caption: t.gallery.captions.img2.title },
+                            { src: "/aome/aome-3.jpeg", alt: "Iluminación", caption: t.gallery.captions.img3.title },
+                            { src: "/aome/aome-4.jpeg", alt: "Aome Electric", caption: t.gallery.captions.img4.title },
                         ]}
                         autoPlay={true}
                         interval={5000}

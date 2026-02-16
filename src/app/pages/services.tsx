@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { useTranslation } from '@/src/i18n';
 import Image from 'next/image';
 
@@ -57,8 +57,43 @@ const services: Service[] = [
    
 ];
 
+interface Translation {
+    services?: {
+        items?: { title?: string; description?: string }[];
+        headline?: string;
+        lead?: string;
+    };
+    gallery?: {
+        captions?: Record<string, { title?: string; desc?: string } | undefined>;
+    };
+}
+
+function CaptionFromSrc({ src, t, fallbackSrc }: Readonly<{ src: string; t: Translation; fallbackSrc?: string }>) {
+    // try to extract number from filenames like aome-10.jpeg or aome10.png or aome-30.mp4
+    const m = src.match(/aome[-_]?([0-9]{1,3})/i) || src.match(/aome([0-9]{1,3})/i);
+    const key = m ? `img${m[1]}` : null;
+    const caption = key && t?.gallery?.captions ? t.gallery.captions[key] : null;
+
+    if (caption) {
+        return (
+            <div>
+                <h4 className="text-lg font-semibold">{caption.title}</h4>
+                <p className="mt-1 text-sm text-gray-200">{caption.desc}</p>
+            </div>
+        );
+    }
+
+    // fallback: try to use services mapping or filename
+    return (
+        <div>
+            <h4 className="text-lg font-semibold">{fallbackSrc}</h4>
+        </div>
+    );
+}
+
 export default function Services() {
     const [activeId, setActiveId] = useState<string | null>(null);
+    const [modalSrc, setModalSrc] = useState<string | null>(null);
     const { t } = useTranslation();
     return (
         <section className="py-16 px-4 bg-gradient-to-br from-slate-50 to-slate-100">
@@ -70,57 +105,61 @@ export default function Services() {
 
                 <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 auto-rows-[300px]">
                         {services.map((service) => {
-                                const isActive = activeId === service.id;
                                 return (
                                 <div
                                         key={service.id}
-                                        onClick={() => setActiveId(isActive ? null : service.id)}
+                                        onClick={() => setModalSrc(service.image)}
                                         className={`${service.span} group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer`}
                                 >
                                         <Image
                                             src={service.image}
-                                        alt={service.title}
+                                            alt={service.title}
                                             fill
                                             priority={service.id === '1'}
                                             fetchPriority={service.id === '1' ? 'high' : 'auto'}
-                                            className={`object-cover ${isActive ? 'scale-105' : 'group-hover:scale-105'} transition-transform duration-300`}
+                                            className={`object-cover group-hover:scale-105 transition-transform duration-300`}
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
 
-                                        {/* Default compact info */}
-                                        {!isActive && (
-                                            <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                                                <h3 className="text-xl font-bold mb-2 group-hover:translate-y-1 transition-transform">
-                                                    {t.services.items[parseInt(service.id, 10) - 1]?.title ?? service.title}
-                                                </h3>
-                                                <p className="text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                    {t.services.items[parseInt(service.id, 10) - 1]?.description ?? service.description}
-                                                </p>
-                                            </div>
-                                        )}
-
-                                        {/* Expanded info when clicked */}
-                                        {isActive && (
-                                            <div className="absolute inset-0 bg-black/70 p-6 text-white flex flex-col">
-                                                <div className="flex items-start justify-between">
-                                                    <div>
-                                                        <h3 className="text-2xl font-bold">{t.services.items[parseInt(service.id, 10) - 1]?.title ?? service.title}</h3>
-                                                        <p className="mt-2 text-sm text-gray-200 max-w-prose">{t.services.items[parseInt(service.id, 10) - 1]?.description ?? service.description}</p>
-                                                    </div>
-                                                    <button
-                                                        onClick={(e) => { e.stopPropagation(); setActiveId(null); }}
-                                                        className="ml-4 text-white bg-white/10 hover:bg-white/20 rounded px-3 py-1"
-                                                    >Cerrar</button>
-                                                </div>
-                                                <div className="mt-4 text-sm text-gray-300">
-                                                    <p>{t.services.moreInfo}</p>
-                                                </div>
-                                            </div>
-                                        )}
+                                        {/* Compact info overlay */}
+                                        <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+                                            <h3 className="text-xl font-bold mb-2 group-hover:translate-y-1 transition-transform">
+                                                {t.services.items[parseInt(service.id, 10) - 1]?.title ?? service.title}
+                                            </h3>
+                                            <p className="text-sm text-gray-200 opacity-90">
+                                                {t.services.items[parseInt(service.id, 10) - 1]?.description ?? service.description}
+                                            </p>
+                                        </div>
                                 </div>
                                 );
                         })}
                 </div>
+
+                {/* Lightbox modal */}
+                {modalSrc && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4" onClick={() => setModalSrc(null)}>
+                        <div className="relative max-w-5xl w-full max-h-[90vh] bg-black" onClick={(e) => e.stopPropagation()}>
+                            {modalSrc.endsWith('.mp4') ? (
+                                <video src={modalSrc} controls className="w-full h-auto max-h-[80vh] object-contain bg-black" />
+                            ) : (
+                                <img src={modalSrc} alt="preview" className="w-full h-auto max-h-[80vh] object-contain" />
+                            )}
+
+                            {/* Caption bar (Bento style) */}
+                            <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-full md:w-[95%] bg-gradient-to-t from-black/90 to-transparent p-4 text-white">
+                                <div className="max-w-4xl mx-auto">
+                                    {/* derive caption key from filename e.g. aome-10.jpeg -> img10 */}
+                                    <CaptionFromSrc src={modalSrc} t={t} fallbackSrc={modalSrc} />
+                                </div>
+                            </div>
+
+                            <button
+                                onClick={() => setModalSrc(null)}
+                                className="absolute top-3 right-3 text-white bg-white/10 hover:bg-white/20 rounded px-3 py-1"
+                            >Cerrar</button>
+                        </div>
+                    </div>
+                )}
             </div>
         </section>
     );

@@ -1,0 +1,172 @@
+const zh = {
+  nav: {
+    home: "主页",
+    about: "关于我们",
+    services: "服务",
+    contact: "联系",
+    register: "注册",
+    gallery: "画廊",
+  },
+
+  // Comments / Feedback
+  comments: {
+    loading: "正在加载评论...",
+    none: "目前还没有评论。",
+    anonymous: "匿名",
+    title: "分享您的体验",
+    description: "您是否喜欢我们的服务？请留下评论，以帮助我们改进并帮助其他客户。",
+    nameLabel: "姓名",
+    namePlaceholder: "您的姓名",
+    emailLabel: "电子邮件（可选）",
+    emailPlaceholder: "you@domain.com",
+    commentLabel: "评论",
+    commentPlaceholder: "撰写有关页面或服务的评论",
+    submit: "发送评论",
+    sending: "发送中...",
+    validation_no_comment: "请输入评论。",
+    thank_you: "感谢您的评论。",
+    send_error: "发送评论时出错。请稍后再试。",
+    phoneLabel: "电话",
+    starLabel: "星级",
+  },
+
+  // Hero
+  hero: {
+    welcome: "欢迎",
+    brand: "AOME ELECTRIC LLC",
+    description: "能源专家，致力于您的安全。",
+    cta: "联系我们 🚀",
+  },
+
+  // Services
+  services: {
+    title: "我们的服务",
+    subtitle: "面向家庭和企业的认证电气安装、维修和维护。立即请求免费估价。",
+    webDev: {
+      title: "完整电气安装",
+      description: "为新建或改造工程提供布线，确保遵守安全法规。",
+    },
+    design: {
+      title: "故障与短路修复",
+      description: "快速检测并修复断电、烧坏插座或意外跳闸等问题。",
+    },
+    mobile: {
+      title: "LED 与装饰照明",
+      description: "为室内、花园和商业空间设计并安装节能照明系统。",
+    },
+    pageTitle: "我们的服务",
+    pageSubtitle: "专业、可靠的电气解决方案",
+    headline: "为您的生活提供电力的电气服务",
+    lead: "安装、维修和维护，质量与安全并重。",
+    closeBtn: "关闭",
+    moreInfo: "有关该服务的更多信息可放在此处。",
+    items: [
+      { title: "完整电气安装", description: "住宅和商业的综合电气安装项目" },
+      { title: "电气维修", description: "电气问题的诊断与修复" },
+      { title: "升级安装", description: "旧电气系统的现代化" },
+    ],
+  },
+
+  // About
+  about: {
+    sectionTitle: "关于",
+    brand: "Aome Electric LLC",
+    title: "关于我们",
+    subtitle: "以卓越为您的世界供电",
+    description1: "Aome Electric LLC 是一支持牌且经验丰富的电工团队，致力于为住宅、商业和工业客户提供高品质电气服务。",
+    description2: "凭借多年的行业经验，我们以专业、细致和客户满意为荣。",
+    values: {
+      licensed: "持牌与保险",
+      experts: "专家技师",
+      availability: "24/7 可用",
+      pricing: "具有竞争力的价格",
+      residential: "住宅与商业",
+      satisfaction: "客户满意",
+    },
+    stats: {
+      experience: "经验年数",
+      projects: "完成项目",
+      clients: "满意客户",
+      rate: "满意率",
+    },
+  },
+
+  gallery: {
+    title: "我们的作品",
+    subtitle: "看看我们最近的一些项目。",
+    captions: {
+      img1: { title: "配电箱与布线升级", desc: "升级配电箱并进行全面布线，以提高安全性和容量。" },
+      img2: { title: "插座维修", desc: "修复损坏的插座并更换有故障的布线，确保可靠运行。" },
+      img3: { title: "LED照明安装", desc: "设计并安装节能的LED灯具和装饰照明。" },
+      img4: { title: "现场团队", desc: "Aome Electric 团队在现场检查和安装过程中的工作照。" },
+      img5: { title: "电气配电箱", desc: "主配电箱和断路器配置特写。" },
+      img6: { title: "布线特写", desc: "整齐排列的布线和电缆管理细节。" },
+      img7: { title: "户外照明", desc: "室外及景观照明的安装。" },
+      img8: { title: "开关与插座", desc: "更换和升级开关及墙面插座。" },
+      img9: { title: "桥架安装", desc: "用于电缆布线路径的防护桥架和管道安装。" },
+      img10: { title: "商业安装", desc: "商业场所的电气安装工程。" },
+      img11: { title: "住宅重布线", desc: "按照现代安全标准进行的整屋重布线工程。" },
+      img12: { title: "电表与配电箱", desc: "电表安装与服务配电箱准备工作。" },
+      img13: { title: "断路器", desc: "断路器和保险丝的检测与更换。" },
+      img14: { title: "灯具安装", desc: "室内灯具的安装与布线。" },
+      img15: { title: "管道敷设", desc: "用于保护布线的长管道敷设。" },
+      img16: { title: "保险丝箱", desc: "住宅保险丝箱的维护与标识。" },
+      img17: { title: "太阳能布线", desc: "光伏系统布线与汇流箱设置。" },
+      img18: { title: "紧急修复", desc: "现场紧急电气修复与故障排查。" },
+      img19: { title: "防浪涌保护", desc: "安装防浪涌保护器并改进接地措施。" },
+      img20: { title: "地下管道", desc: "为供电设施准备和安装地下管道。" },
+      img21: { title: "服务升级", desc: "提高负载能力的电力服务升级。" },
+      img22: { title: "照明设计", desc: "定制照明布局与灯具选择。" },
+      img23: { title: "天花板灯具", desc: "嵌入式及表面安装天花板灯具的安装。" },
+      img24: { title: "景观照明", desc: "为户外景观提供重点和路径照明。" },
+      img25: { title: "配电箱标识", desc: "组织并标记电路以便于维护。" },
+      img26: { title: "新建工程布线", desc: "新建工程的粗配线阶段。" },
+      img27: { title: "维护检查", desc: "例行检查与预防性维护工作。" },
+      img28: { title: "布线束", desc: "带颜色识别的电缆捆束。" },
+      img29: { title: "控制盘", desc: "控制盘布线与端子整理。" },
+      img30: { title: "项目视频1", desc: "展示近期项目的短视频片段。" },
+      img31: { title: "项目视频2", desc: "项目演示与亮点视频。" },
+    },
+  },
+
+  footer: {
+    description: "擅长住宅、商业和工业电气服务。您的安全是我们的首要任务。",
+    quickLinks: "快速链接",
+    contactInfo: "联系信息",
+    followUs: "关注我们",
+    rights: "版权所有。",
+    developedBy: "开发者",
+  },
+
+  contact: {
+    title: "联系我们",
+    subtitle: "有项目想做吗？让我们聊聊！",
+    namePlaceholder: "您的姓名",
+    emailPlaceholder: "您的邮箱",
+    messagePlaceholder: "您的消息",
+    submit: "发送消息 ✉️",
+    info: {
+      heading: "联系信息",
+      paragraph: "无论您需要住宅或商业电气服务，Aome Electric LLC 都可以为您提供帮助。",
+      phoneLabel: "电话",
+      emailLabel: "邮箱",
+      addressLabel: "地址",
+      hoursLabel: "营业时间",
+      open24: "24/7 服务",
+    },
+    badges: {
+      residential: "住宅",
+      commercial: "商业",
+      freeEstimate: "免费估价",
+      licensed: "持牌与保险",
+    },
+    cta: {
+      title: "需要紧急电力服务吗？",
+      text: "我们 24/7 提供服务。持牌、投保，随时待命。",
+      callNow: "立即致电: (404) 488-0557",
+    },
+    whatsappTooltip: "给我们发消息!",
+  },
+};
+
+export default zh;

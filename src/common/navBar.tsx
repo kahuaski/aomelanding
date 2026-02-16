@@ -22,6 +22,7 @@ const NavBar: React.FC = () => {
         { name: t.nav.about, href: "/about" },
         { name: t.nav.services, href: "/services" },
         { name: t.nav.contact, href: "/contact" },
+        { name: t.nav.gallery, href: "/gallery" },
     ];
 
     return (
@@ -29,7 +30,7 @@ const NavBar: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <div className="flex-shrink-0 flex flex-row items-center gap-3">
-                        <Image src="/aome111.png" alt="Aome Electric LLC Logo" width={40} height={40} className="rounded" priority={false} />
+                        <Image src="/aome111.png" alt="Aome Electric LLC Logo" width={40} height={40} className="rounded" priority={false} style={{ width: 'auto', height: 'auto' }} />
                         <Link href="/" className="text-2xl font-bold text-blue-600">
                             AomeElectricllc
                         </Link>
@@ -49,8 +50,25 @@ const NavBar: React.FC = () => {
                             className="flex items-center gap-1.5 text-sm font-semibold text-gray-600 hover:text-blue-600 border border-gray-300 hover:border-blue-400 px-3 py-1.5 rounded-full transition-all duration-200"
                             aria-label="Toggle language"
                         >
-                            <span className="text-base">{locale === "es" ? "🇺🇸" : "🇲🇽"}</span>
-                            {locale === "es" ? "EN" : "ES"}
+                            {
+                                (() => {
+                                    const map: Record<string, { flag: string; label: string }> = {
+                                        es: { flag: "🇲🇽", label: "ES" },
+                                        en: { flag: "🇺🇸", label: "EN" },
+                                        fr: { flag: "🇫🇷", label: "FR" },
+                                        hi: { flag: "🇮🇳", label: "HI" },
+                                        ja: { flag: "🇯🇵", label: "JA" },
+                                        zh: { flag: "🇨🇳", label: "ZH" },
+                                    };
+                                    const info = map[locale] || { flag: "🏳️", label: locale.toUpperCase() };
+                                    return (
+                                        <>
+                                            <span className="text-base">{info.flag}</span>
+                                            {info.label}
+                                        </>
+                                    );
+                                })()
+                            }
                         </button>
                     </div>
 
@@ -60,8 +78,25 @@ const NavBar: React.FC = () => {
                             className="flex items-center gap-1 text-xs font-semibold text-gray-600 border border-gray-300 px-2 py-1 rounded-full"
                             aria-label="Toggle language"
                         >
-                            <span>{locale === "es" ? "🇺🇸" : "🇲🇽"}</span>
-                            {locale === "es" ? "EN" : "ES"}
+                            {
+                                (() => {
+                                    const map: Record<string, { flag: string; label: string }> = {
+                                        es: { flag: "🇲🇽", label: "ES" },
+                                        en: { flag: "🇺🇸", label: "EN" },
+                                        fr: { flag: "🇫🇷", label: "FR" },
+                                        hi: { flag: "🇮🇳", label: "HI" },
+                                        ja: { flag: "🇯🇵", label: "JA" },
+                                        zh: { flag: "🇨🇳", label: "ZH" },
+                                    };
+                                    const info = map[locale] || { flag: "🏳️", label: locale.toUpperCase() };
+                                    return (
+                                        <>
+                                            <span>{info.flag}</span>
+                                            {info.label}
+                                        </>
+                                    );
+                                })()
+                            }
                         </button>
                         <button
                             onClick={toggleMenu}

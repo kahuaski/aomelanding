@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 interface CarouselImage {
@@ -22,6 +23,7 @@ const Carousel: React.FC<CarouselProps> = ({
     interval = 4000,
     height = "h-[500px]",
 }) => {
+    const router = useRouter();
     const [current, setCurrent] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
 
@@ -53,6 +55,7 @@ const Carousel: React.FC<CarouselProps> = ({
             {images.map((image, index) => (
                 <div
                     key={index}
+                    onClick={() => router.push('/gallery')}
                     className={`absolute inset-0 transition-all duration-700 ease-in-out ${
                         index === current ? "opacity-100 scale-100" : "opacity-0 scale-105"
                     }`}
@@ -76,7 +79,7 @@ const Carousel: React.FC<CarouselProps> = ({
 
             {/* Left Arrow */}
             <button
-                onClick={prev}
+                onClick={(e) => { e.stopPropagation(); prev(); }}
                 className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100"
                 aria-label="Previous"
             >
@@ -87,7 +90,7 @@ const Carousel: React.FC<CarouselProps> = ({
 
             {/* Right Arrow */}
             <button
-                onClick={next}
+                onClick={(e) => { e.stopPropagation(); next(); }}
                 className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100"
                 aria-label="Next"
             >
@@ -101,7 +104,7 @@ const Carousel: React.FC<CarouselProps> = ({
                 {images.map((_, index) => (
                     <button
                         key={index}
-                        onClick={() => goTo(index)}
+                        onClick={(e) => { e.stopPropagation(); goTo(index); }}
                         className={`transition-all duration-300 rounded-full ${
                             index === current
                                 ? "w-8 h-3 bg-white"

@@ -3,12 +3,16 @@
 import React, { createContext, useContext, useState, useCallback, useMemo } from "react";
 import es from "./locales/es";
 import en from "./locales/en";
+import fr from "./locales/fr";
+import hi from "./locales/hi";
+import ja from "./locales/ja";
+import zh from "./locales/zh";
 
-export type Locale = "es" | "en";
+export type Locale = "es" | "en" | "fr" | "hi" | "ja" | "zh";
 
 type Translations = typeof es;
 
-const translations: Record<Locale, Translations> = { es, en };
+const translations: Record<Locale, Translations> = { es, en, fr, hi, ja, zh };
 
 interface I18nContextType {
   locale: Locale;
@@ -28,7 +32,10 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   const toggleLocale = useCallback(() => {
-    setLocale(locale === "es" ? "en" : "es");
+    const order: Locale[] = ["es", "en", "fr", "hi", "ja", "zh"];
+    const currentIndex = order.indexOf(locale);
+    const next = order[(currentIndex + 1) % order.length];
+    setLocale(next);
   }, [locale, setLocale]);
 
   const t = useMemo(() => translations[locale], [locale]);

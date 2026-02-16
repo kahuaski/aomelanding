@@ -1,0 +1,172 @@
+const ja = {
+  nav: {
+    home: "ホーム",
+    about: "会社について",
+    services: "サービス",
+    contact: "お問い合わせ",
+    register: "登録",
+    gallery: "ギャラリー",
+  },
+
+  // Comments / Feedback
+  comments: {
+    loading: "コメントを読み込み中...",
+    none: "まだコメントはありません。",
+    anonymous: "匿名",
+    title: "体験を共有してください",
+    description: "サービスはいかがでしたか？ コメントを残して、私たちの改善と他のお客様の参考にしてください。",
+    nameLabel: "名前",
+    namePlaceholder: "あなたの名前",
+    emailLabel: "メール（任意）",
+    emailPlaceholder: "you@domain.com",
+    commentLabel: "コメント",
+    commentPlaceholder: "ページやサービスについてコメントを書いてください",
+    submit: "コメントを送信",
+    sending: "送信中...",
+    validation_no_comment: "コメントを入力してください。",
+    thank_you: "コメントありがとうございます。",
+    send_error: "コメントの送信中にエラーが発生しました。後でもう一度お試しください。",
+    phoneLabel: "電話",
+    starLabel: "星",
+  },
+
+  // Hero
+  hero: {
+    welcome: "ようこそ",
+    brand: "AOME ELECTRIC LLC",
+    description: "エネルギーの専門家、あなたの安全に尽力します。",
+    cta: "お問い合わせ 🚀",
+  },
+
+  // Services
+  services: {
+    title: "サービス",
+    subtitle: "住宅および事業向けの認定電気工事、修理、保守。今すぐ無料見積もりを依頼してください。",
+    webDev: {
+      title: "完全な電気工事",
+      description: "新築やリフォームの配線、規制に準拠した工事を行います。",
+    },
+    design: {
+      title: "故障・短絡修理",
+      description: "停電や焼損したコンセント、ブレーカーのトリップの検出と修理。",
+    },
+    mobile: {
+      title: "LED・装飾照明",
+      description: "室内・庭・商業スペース向けの省エネ照明の設計と設置。",
+    },
+    pageTitle: "サービス",
+    pageSubtitle: "プロフェッショナルで信頼できる電気ソリューション",
+    headline: "あなたの生活に電力を供給する電気サービス",
+    lead: "設置、修理、保守 — 品質と安全性を重視しています。",
+    closeBtn: "閉じる",
+    moreInfo: "サービスの詳細はここに表示できます。",
+    items: [
+      { title: "完全な電気工事", description: "住宅および商業向けの包括的なインストール" },
+      { title: "電気修理", description: "電気的な問題の診断と修理" },
+      { title: "設備更新", description: "古い電気システムの近代化" },
+    ],
+  },
+
+  // About
+  about: {
+    sectionTitle: "会社概要",
+    brand: "Aome Electric LLC",
+    title: "私たちについて",
+    subtitle: "卓越性であなたの世界に電力を",
+    description1: "Aome Electric LLCは、住宅、商業、産業向けに高品質な電気サービスを提供する熟練の電気技師のチームです。",
+    description2: "多年の経験により、私たちは職人技と顧客満足に誇りを持っています。",
+    values: {
+      licensed: "認可・保険加入済み",
+      experts: "専門技術者",
+      availability: "24/7 対応",
+      pricing: "競争力のある価格",
+      residential: "住宅 & 商業",
+      satisfaction: "顧客満足",
+    },
+    stats: {
+      experience: "経験年数",
+      projects: "完了プロジェクト",
+      clients: "満足した顧客",
+      rate: "満足率",
+    },
+  },
+
+  gallery: {
+    title: "実績",
+    subtitle: "最近のプロジェクトの一部をご覧ください。",
+    captions: {
+      img1: { title: "配電盤と配線のアップグレード", desc: "安全性と容量を改善するための配電盤のアップグレードと配線の全面改修。" },
+      img2: { title: "コンセント修理", desc: "損傷したコンセントの修理と不良配線の交換。" },
+      img3: { title: "LED照明の設置", desc: "省エネ型LED器具と装飾照明の設計と設置。" },
+      img4: { title: "現場でのチーム", desc: "現場での点検や設置作業中のAome Electricチーム。" },
+      img5: { title: "分電盤", desc: "主分電盤とブレーカの構成のクローズアップ。" },
+      img6: { title: "配線クローズアップ", desc: "整頓された配線とケーブル管理の詳細。" },
+      img7: { title: "屋外照明", desc: "屋外および景観照明の施工。" },
+      img8: { title: "スイッチとコンセント", desc: "スイッチと壁面コンセントの交換・アップグレード。" },
+      img9: { title: "ダクト設置", desc: "ケーブル配線のための保護ダクトと配管作業。" },
+      img10: { title: "商業施設での施工", desc: "商業サイトでの電気工事の様子。" },
+      img11: { title: "住宅の再配線", desc: "最新の安全基準に合わせた住宅の全面配線工事。" },
+      img12: { title: "メーターと分電盤", desc: "メーター取り付けとサービスパネルの準備作業。" },
+      img13: { title: "ブレーカー", desc: "ブレーカーとヒューズの点検・交換作業。" },
+      img14: { title: "照明器具", desc: "室内照明器具の取り付けと配線。" },
+      img15: { title: "配管作業", desc: "保護されたケーブル配線のための長い配管敷設。" },
+      img16: { title: "ヒューズボックス", desc: "住宅用ヒューズボックスの保守とラベリング。" },
+      img17: { title: "ソーラー配線", desc: "太陽光発電システムの配線と結合箱の設置。" },
+      img18: { title: "緊急修理", desc: "現場での緊急電気修理とトラブルシューティング。" },
+      img19: { title: "サージ保護", desc: "サージプロテクターの設置と接地の改善。" },
+      img20: { title: "地下配管", desc: "サービス供給のための地下配管の準備と設置。" },
+      img21: { title: "サービスアップグレード", desc: "負荷容量拡大のための電気サービスのアップグレード。" },
+      img22: { title: "照明設計", desc: "カスタム照明レイアウトと器具の選定。" },
+      img23: { title: "天井器具", desc: "埋め込みおよび表面取り付けの天井器具の取り付け。" },
+      img24: { title: "ランドスケープ照明", desc: "屋外の景観のアクセントと通路照明。" },
+      img25: { title: "盤のラベリング", desc: "保守が容易になるように回路の整理とラベリングを実施。" },
+      img26: { title: "新築配線", desc: "新築プロジェクトのラフイン配線作業。" },
+      img27: { title: "メンテチェック", desc: "定期点検と予防保守作業。" },
+      img28: { title: "配線バンドル", desc: "色分けされた識別付きのケーブル束。" },
+      img29: { title: "制御盤", desc: "制御盤の配線と端子の整理。" },
+      img30: { title: "プロジェクト動画1", desc: "最近のプロジェクトを紹介する短い動画クリップ。" },
+      img31: { title: "プロジェクト動画2", desc: "プロジェクトのウォークスルーとハイライト動画。" },
+    },
+  },
+
+  footer: {
+    description: "住宅、商業、産業向けの電気サービスの専門家。あなたの安全が最優先です。",
+    quickLinks: "クイックリンク",
+    contactInfo: "連絡先情報",
+    followUs: "フォローする",
+    rights: "全著作権所有。",
+    developedBy: "開発者",
+  },
+
+  contact: {
+    title: "お問い合わせ",
+    subtitle: "プロジェクトがありますか？ご相談ください！",
+    namePlaceholder: "お名前",
+    emailPlaceholder: "メールアドレス",
+    messagePlaceholder: "メッセージ",
+    submit: "メッセージを送る ✉️",
+    info: {
+      heading: "お問い合わせ",
+      paragraph: "住宅や事業向けの電気サービスが必要な場合は、Aome Electric LLC にご相談ください。",
+      phoneLabel: "電話",
+      emailLabel: "メール",
+      addressLabel: "住所",
+      hoursLabel: "営業時間",
+      open24: "24時間対応",
+    },
+    badges: {
+      residential: "住宅向け",
+      commercial: "商業向け",
+      freeEstimate: "無料見積もり",
+      licensed: "認可・保険加入",
+    },
+    cta: {
+      title: "緊急の電気サービスが必要ですか？",
+      text: "24時間対応。認可・保険加入済みで、すぐに対応します。",
+      callNow: "今すぐ電話: (404) 488-0557",
+    },
+    whatsappTooltip: "メッセージを送る！",
+  },
+};
+
+export default ja;

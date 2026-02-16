@@ -56,7 +56,6 @@ export default function CommentForm({ page = "general" }: Props) {
       setRating(null);
     } catch (err) {
       // eslint-disable-next-line no-console
-      console.error("Error saving comment:", err);
       setStatusMessage(t.comments.send_error);
     } finally {
       setLoading(false);
