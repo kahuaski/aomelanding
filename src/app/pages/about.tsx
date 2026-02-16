@@ -3,6 +3,7 @@
 import React from "react";
 import { FiCheckCircle, FiTool, FiClock, FiDollarSign, FiHome, FiStar } from "react-icons/fi";
 import { HiLightningBolt } from "react-icons/hi";
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { useTranslation } from "@/src/i18n";
 import RatingSummary from "../../components/RatingSummary";
 import Image from "next/image";
@@ -43,22 +44,30 @@ const About: React.FC = () => {
                     <div className="w-full lg:w-1/2 flex justify-center">
                         {/* Bento-style gallery: 2 large panels on top, smaller tiles below on wide screens */}
                         <div className="w-full max-w-lg">
-                            <div className="grid grid-cols-2 lg:grid-cols-4 grid-rows-2 gap-3 h-96 lg:h-105">
+                            {/* Responsive grid: single-column on very small screens, 2 cols on small, bento layout on lg+ */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 auto-rows-fr">
                                 {[
-                                    '/aome/aome-11.jpeg',
-                                    '/aome/aome-22.jpeg',
-                                    '/aome/aome-3.jpeg',
+                                    '/aome/aome-1.jpeg',
+                                    '/aome/aome-10.jpeg',
+                                    '/aome/aome-23.jpeg',
                                     '/aome/aome-4.jpeg',
-                                    '/aome/aome-12.jpeg',
-                                    '/aome/aome-18.jpeg',
+                                    '/aome/aome-5.jpeg',
+                                    '/aome/aome-6.jpeg',
                                 ].map((src, i) => (
                                     <div
                                         key={src}
-                                        className={`${i < 2 ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'} rounded-2xl overflow-hidden shadow-md bg-gray-100 h-full`}
+                                        className={`${i < 2 ? 'col-span-1 row-span-1 sm:col-span-2 sm:row-span-2' : 'col-span-1 row-span-1'} rounded-2xl overflow-hidden shadow-md bg-gray-100`}
                                     >
-                                                <div className="relative w-full h-full">
-                                                    <Image src={src} alt={`Gallery ${i + 1}`} fill className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300" sizes="(max-width: 1024px) 50vw, 380px" />
-                                                </div>
+                                        <div className="w-full">
+                                            <Image
+                                                src={src}
+                                                alt={`Gallery ${i + 1}`}
+                                                width={1200}
+                                                height={800}
+                                                className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300"
+                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+                                            />
+                                        </div>
                                     </div>
                                 ))}
                             </div>
@@ -76,6 +85,25 @@ const About: React.FC = () => {
                         <p className="text-lg text-gray-500 leading-relaxed mb-8">
                             {t.about.description2}
                         </p>
+
+                        {/* Social links */}
+                        <div className="mb-6">
+                            <h4 className="text-lg font-semibold text-gray-900 mb-3">{t.footer?.followUs ?? 'Follow us'}</h4>
+                            <div className="flex items-center gap-3">
+                                <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on Facebook" className="w-9 h-9 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-transform transform hover:scale-105 shadow-sm">
+                                    <FaFacebookF className="w-4 h-4 text-white" />
+                                </a>
+                                <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on Instagram" className="w-9 h-9 bg-gradient-to-br from-purple-600 to-pink-500 rounded-full flex items-center justify-center transition-transform transform hover:scale-105 shadow-sm">
+                                    <FaInstagram className="w-4 h-4 text-white" />
+                                </a>
+                                <a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on TikTok" className="w-9 h-9 bg-black rounded-full flex items-center justify-center transition-transform transform hover:scale-105 shadow-sm">
+                                    <FaTiktok className="w-4 h-4 text-white" />
+                                </a>
+                                <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Aome Electric on YouTube" className="w-9 h-9 bg-red-600 rounded-full flex items-center justify-center transition-transform transform hover:scale-105 shadow-sm">
+                                    <FaYoutube className="w-4 h-4 text-white" />
+                                </a>
+                            </div>
+                        </div>
 
                         {/* Values (photon-style icons with label below) */}
                         <div className="flex flex-wrap gap-6">

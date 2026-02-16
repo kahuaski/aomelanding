@@ -25,15 +25,12 @@ const NavBar: React.FC = () => {
         <nav className="bg-white shadow-md fixed w-full top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
-                    {/* Logo */}
                     <div className="flex-shrink-0 flex flex-row items-center gap-3">
                         <Image src="/aome111.png" alt="Aome Electric LLC Logo" width={40} height={40} className="rounded" priority={false} />
                         <Link href="/" className="text-2xl font-bold text-blue-600">
                             AomeElectricllc
                         </Link>
                     </div>
-
-                    {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-8">
                         {navLinks.map((link) => (
                             <Link
@@ -44,13 +41,6 @@ const NavBar: React.FC = () => {
                                 {link.name}
                             </Link>
                         ))}
-                        <a
-                            href="#registrate"
-                            className="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-colors duration-300 font-medium"
-                        >
-                            {t.nav.register}
-                        </a>
-                        {/* Language Toggle */}
                         <button
                             onClick={toggleLocale}
                             className="flex items-center gap-1.5 text-sm font-semibold text-gray-600 hover:text-blue-600 border border-gray-300 hover:border-blue-400 px-3 py-1.5 rounded-full transition-all duration-200"
@@ -61,7 +51,6 @@ const NavBar: React.FC = () => {
                         </button>
                     </div>
 
-                    {/* Mobile Menu Button */}
                     <div className="md:hidden flex items-center gap-3">
                         <button
                             onClick={toggleLocale}
@@ -95,13 +84,7 @@ const NavBar: React.FC = () => {
                                         {link.name}
                                     </Link>
                                 ))}
-                            <a
-                                href="#registrate"
-                                onClick={() => setIsOpen(false)}
-                                className="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-colors duration-300 font-medium text-center"
-                            >
-                                {t.nav.register}
-                            </a>
+                        
                         </div>
                     </div>
                 )}

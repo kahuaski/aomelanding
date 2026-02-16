@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { useTranslation } from "@/src/i18n";
-import About from "./about";
 import Carousel from "@/src/common/Carousel";
 import dynamic from "next/dynamic";
 
@@ -88,7 +87,6 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-            {/* Galería / Carrusel */}
             <section className="py-10 sm:py-14 bg-gray-50" id="galeria">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-4">
