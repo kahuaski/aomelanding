@@ -1,12 +1,22 @@
 "use client";
 
 import React from "react";
-import { FiCheckCircle, FiTool, FiClock, FiDollarSign, FiHome, FiStar } from "react-icons/fi";
-import { HiLightningBolt } from "react-icons/hi";
-import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
+import dynamic from "next/dynamic";
 import { useTranslation } from "@/src/i18n";
 import RatingSummary from "../../components/RatingSummary";
 import Image from "next/image";
+
+const FiCheckCircle = dynamic(() => import('react-icons/fi').then(m => m.FiCheckCircle), { ssr: false });
+const FiTool = dynamic(() => import('react-icons/fi').then(m => m.FiTool), { ssr: false });
+const FiClock = dynamic(() => import('react-icons/fi').then(m => m.FiClock), { ssr: false });
+const FiDollarSign = dynamic(() => import('react-icons/fi').then(m => m.FiDollarSign), { ssr: false });
+const FiHome = dynamic(() => import('react-icons/fi').then(m => m.FiHome), { ssr: false });
+const FiStar = dynamic(() => import('react-icons/fi').then(m => m.FiStar), { ssr: false });
+const HiLightningBolt = dynamic(() => import('react-icons/hi').then(m => m.HiLightningBolt), { ssr: false });
+const FaFacebookF = dynamic(() => import('react-icons/fa').then(m => m.FaFacebookF), { ssr: false });
+const FaInstagram = dynamic(() => import('react-icons/fa').then(m => m.FaInstagram), { ssr: false });
+const FaTiktok = dynamic(() => import('react-icons/fa').then(m => m.FaTiktok), { ssr: false });
+const FaYoutube = dynamic(() => import('react-icons/fa').then(m => m.FaYoutube), { ssr: false });
 
 const About: React.FC = () => {
     const { t } = useTranslation();

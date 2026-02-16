@@ -3,8 +3,12 @@
 import React, { useEffect, useState } from "react";
 import { collection, query, orderBy, where, onSnapshot } from "firebase/firestore";
 import { db } from "../services/firebase.config";
-import { AiFillStar, AiOutlineStar, AiOutlineUser } from "react-icons/ai";
-import { MdContactPhone } from "react-icons/md";
+import dynamic from "next/dynamic";
+
+const AiFillStar = dynamic(() => import('react-icons/ai').then(m => m.AiFillStar), { ssr: false });
+const AiOutlineStar = dynamic(() => import('react-icons/ai').then(m => m.AiOutlineStar), { ssr: false });
+const AiOutlineUser = dynamic(() => import('react-icons/ai').then(m => m.AiOutlineUser), { ssr: false });
+const MdContactPhone = dynamic(() => import('react-icons/md').then(m => m.MdContactPhone), { ssr: false });
 import { useTranslation } from "@/src/i18n";
 
 type CommentItem = {

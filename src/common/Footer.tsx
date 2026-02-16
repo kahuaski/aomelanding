@@ -2,9 +2,16 @@
 
 import React from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useTranslation } from "@/src/i18n";
-import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
-import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
+
+const FiPhone = dynamic(() => import('react-icons/fi').then(m => m.FiPhone), { ssr: false });
+const FiMail = dynamic(() => import('react-icons/fi').then(m => m.FiMail), { ssr: false });
+const FiMapPin = dynamic(() => import('react-icons/fi').then(m => m.FiMapPin), { ssr: false });
+const FaFacebookF = dynamic(() => import('react-icons/fa').then(m => m.FaFacebookF), { ssr: false });
+const FaInstagram = dynamic(() => import('react-icons/fa').then(m => m.FaInstagram), { ssr: false });
+const FaTiktok = dynamic(() => import('react-icons/fa').then(m => m.FaTiktok), { ssr: false });
+const FaYoutube = dynamic(() => import('react-icons/fa').then(m => m.FaYoutube), { ssr: false });
 
 const Footer: React.FC = () => {
     const { t } = useTranslation();

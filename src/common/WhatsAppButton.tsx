@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
-import { FaWhatsapp } from "react-icons/fa";
+import dynamic from "next/dynamic";
 import { useTranslation } from "@/src/i18n";
+
+const FaWhatsapp = dynamic(() => import('react-icons/fa').then(m => m.FaWhatsapp), { ssr: false });
 
 const WHATSAPP_NUMBER = "14044880557"; 
 const DEFAULT_MESSAGE = "Hola, me gustaría obtener más información sobre sus servicios eléctricos.";

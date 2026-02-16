@@ -3,8 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { HiMenu, HiX } from "react-icons/hi";
+import dynamic from "next/dynamic";
 import { useTranslation } from "@/src/i18n";
+
+const HiMenu = dynamic(() => import('react-icons/hi').then(m => m.HiMenu), { ssr: false });
+const HiX = dynamic(() => import('react-icons/hi').then(m => m.HiX), { ssr: false });
 
 const NavBar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
