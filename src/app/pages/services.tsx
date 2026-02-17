@@ -8,7 +8,7 @@ interface Service {
     id: string;
     title: string;
     description: string;
-    image: string;
+    image: string | string[];
     span?: string;
 }
 const services: Service[] = [
@@ -37,23 +37,10 @@ const services: Service[] = [
         id: '4',
         title: 'Iluminación Profesional',
         description: 'Diseño e instalación de sistemas de iluminación LED',
-        image: '/aome/aome-14.jpeg',
+        image: ['/aome/aome-14.jpeg', '/aome/aome-24.jpeg', '/aome/aome-8.jpeg'],
         span: 'col-span-2',
     },
-   {
-        id: '5',
-        title: 'Iluminación Profesional',
-        description: 'Diseño e instalación de sistemas de iluminación LED',
-        image: '/aome/aome-24.jpeg',
-        span: 'col-span-2',
-    },
-   {
-        id: '6',
-        title: 'Iluminación Profesional',
-        description: 'Diseño e instalación de sistemas de iluminación LED',
-        image: '/aome/aome-8.jpeg',
-        span: 'col-span-2',
-    },
+   
    
 ];
 
@@ -93,7 +80,8 @@ function CaptionFromSrc({ src, t, fallbackSrc }: Readonly<{ src: string; t: Tran
 
 export default function Services() {
     const [activeId, setActiveId] = useState<string | null>(null);
-    const [modalSrc, setModalSrc] = useState<string | null>(null);
+    const [modalImages, setModalImages] = useState<string[] | null>(null);
+    const [modalIndex, setModalIndex] = useState<number>(0);
     const { t } = useTranslation();
     return (
         <section className="py-16 px-4 bg-gradient-to-br from-slate-50 to-slate-100">
@@ -105,20 +93,39 @@ export default function Services() {
 
                 <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-4 auto-rows-[300px]">
                         {services.map((service) => {
+                                const images = Array.isArray(service.image) ? service.image : [service.image];
                                 return (
                                 <div
                                         key={service.id}
-                                        onClick={() => setModalSrc(service.image)}
+                                        onClick={() => { setModalImages(images); setModalIndex(0); }}
                                         className={`${service.span} group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer`}
                                 >
-                                        <Image
-                                            src={service.image}
-                                            alt={service.title}
-                                            fill
-                                            priority={service.id === '1'}
-                                            fetchPriority={service.id === '1' ? 'high' : 'auto'}
-                                            className={`object-cover group-hover:scale-105 transition-transform duration-300`}
-                                        />
+                                        {/* If service has multiple images render a small collage, otherwise a single image */}
+                                        {images.length > 1 ? (
+                                            <div className="w-full h-full grid grid-cols-2 grid-rows-2 gap-1">
+                                                {images.map((src, i) => (
+                                                    <div key={src} className={`${i === 0 ? 'col-span-2 row-span-1 md:row-span-2' : ''} relative h-full w-full` }>
+                                                        <Image
+                                                            src={src}
+                                                            alt={`${service.title} ${i + 1}`}
+                                                            fill
+                                                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                                                            priority={i === 0}
+                                                        />
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ) : (
+                                            <Image
+                                                src={images[0]}
+                                                alt={service.title}
+                                                fill
+                                                priority={service.id === '1'}
+                                                fetchPriority={service.id === '1' ? 'high' : 'auto'}
+                                                className={`object-cover group-hover:scale-105 transition-transform duration-300`}
+                                            />
+                                        )}
+
                                         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
 
                                         {/* Compact info overlay */}
@@ -136,25 +143,34 @@ export default function Services() {
                 </div>
 
                 {/* Lightbox modal */}
-                {modalSrc && (
-                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4" onClick={() => setModalSrc(null)}>
+                {modalImages && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4" onClick={() => setModalImages(null)}>
                         <div className="relative max-w-5xl w-full max-h-[90vh] bg-black" onClick={(e) => e.stopPropagation()}>
-                            {modalSrc.endsWith('.mp4') ? (
-                                <video src={modalSrc} controls className="w-full h-auto max-h-[80vh] object-contain bg-black" />
+                            {modalImages[modalIndex].endsWith('.mp4') ? (
+                                <video src={modalImages[modalIndex]} controls className="w-full h-auto max-h-[80vh] object-contain bg-black" />
                             ) : (
-                                <img src={modalSrc} alt="preview" className="w-full h-auto max-h-[80vh] object-contain" />
+                                <img src={modalImages[modalIndex]} alt="preview" className="w-full h-auto max-h-[80vh] object-contain" />
                             )}
+
+                            {/* Controls */}
+                            <button
+                                onClick={() => setModalIndex((idx) => (idx - 1 + modalImages.length) % modalImages.length)}
+                                className="absolute left-3 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/20 rounded px-3 py-1"
+                            >◀</button>
+                            <button
+                                onClick={() => setModalIndex((idx) => (idx + 1) % modalImages.length)}
+                                className="absolute right-3 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/20 rounded px-3 py-1"
+                            >▶</button>
 
                             {/* Caption bar (Bento style) */}
                             <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-full md:w-[95%] bg-gradient-to-t from-black/90 to-transparent p-4 text-white">
                                 <div className="max-w-4xl mx-auto">
-                                    {/* derive caption key from filename e.g. aome-10.jpeg -> img10 */}
-                                    <CaptionFromSrc src={modalSrc} t={t} fallbackSrc={modalSrc} />
+                                    <CaptionFromSrc src={modalImages[modalIndex]} t={t} fallbackSrc={modalImages[modalIndex]} />
                                 </div>
                             </div>
 
                             <button
-                                onClick={() => setModalSrc(null)}
+                                onClick={() => setModalImages(null)}
                                 className="absolute top-3 right-3 text-white bg-white/10 hover:bg-white/20 rounded px-3 py-1"
                             >Cerrar</button>
                         </div>
